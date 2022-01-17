@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
     'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    'x-rapidapi-key': '0f7a76ac05mshe7fcc80441c1299p13dd6djsnb6e2ca5e17cf'
+    'x-rapidapi-key': 'cb2b33e6f8mshdde1c6c36d1499ap18f446jsnc41b3b71ee2d'
 }
 
 const baseUrl = 'https://coinranking1.p.rapidapi.com';
@@ -23,7 +23,7 @@ export const cryptoApi = createApi({
             query: (coinId) => createRequest(`/coin/${coinId}`)
         }),
         getCryptoHistory: builder.query({
-            query: ({ coinId, timePeriod }) => createRequest(`coin/${coinId}/history/${timePeriod}`),
+            query: ({coinId, timeperiod}) => createRequest(`coin/${coinId}/history?timePeriod=${timeperiod}`),
         }),
     })
 })
